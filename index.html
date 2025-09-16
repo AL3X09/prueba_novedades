@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dinámico</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2em auto; padding: 1em; border: 1px solid #ccc; border-radius: 8px; }
+        .row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+        .item-row { border: 1px solid #eee; padding: 10px; border-radius: 5px; }
+        input { flex-grow: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 12px; cursor: pointer; border-radius: 4px; }
+        #item-container { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Generador de Reporte</h1>
+    <form id="dynamicForm">
+        <div class="row">
+            <label for="report-name">Nombre del Reporte:</label>
+            <input type="text" id="report-name" name="reportName" required>
+        </div>
+
+        <h2>Items:</h2>
+        <div id="item-container">
+            </div>
+
+        <button type="button" id="addItemBtn">➕ Agregar Ítem</button>
+        <hr>
+        <button type="submit">🚀 Enviar a n8n</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('dynamicForm');
+            const itemContainer = document.getElementById('item-container');
+            const addItemBtn = document.getElementById('addItemBtn');
+            const webhookUrl = 'TU_URL_DEL_WEBHOOK_DE_N8N'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
+
+            let rowCount = 0;
+
+            // Función para crear y agregar una nueva fila
+            function createItemRow() {
+                rowCount++;
+                const newRow = document.createElement('div');
+                newRow.classList.add('item-row');
+                newRow.innerHTML = `
+                    <div class="row">
+                        <input type="text" name="itemName-${rowCount}" placeholder="Nombre del Ítem" required>
+                        <input type="number" name="quantity-${rowCount}" placeholder="Cantidad" required>
+                        <button type="button" class="removeItemBtn">🗑️</button>
+                    </div>
+                `;
+                itemContainer.appendChild(newRow);
+
+                // Agregar el evento al nuevo botón de eliminar
+                newRow.querySelector('.removeItemBtn').addEventListener('click', () => {
+                    itemContainer.removeChild(newRow);
+                });
+            }
+
+            // Agrega una fila inicial al cargar
+            createItemRow();
+
+            // Evento para el botón de agregar
+            addItemBtn.addEventListener('click', createItemRow);
+
+            // Evento para el envío del formulario
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Evita el envío tradicional del formulario
+
+                const formData = new FormData(form);
+                const dataToSend = {
+                    reportName: formData.get('reportName'),
+                    items: [] // Aquí se almacenarán las filas dinámicas como un array de objetos
+                };
+
+                // Recorre todas las filas de ítems y las añade al array
+                const itemRows = itemContainer.querySelectorAll('.item-row');
+                itemRows.forEach(row => {
+                    const itemName = row.querySelector('input[name^="itemName"]').value;
+                    const quantity = row.querySelector('input[name^="quantity"]').value;
+                    dataToSend.items.push({
+                        itemName,
+                        quantity: parseInt(quantity)
+                    });
+                });
+
+                console.log('Datos a enviar:', dataToSend);
+
+                try {
+                    const response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(dataToSend)
+                    });
+
+                    if (response.ok) {
+                        alert('Datos enviados a n8n con éxito!');
+                        form.reset();
+                        itemContainer.innerHTML = ''; // Limpia las filas
+                        createItemRow(); // Agrega la primera fila nuevamente
+                    } else {
+                        alert('Error al enviar los datos a n8n.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error de conexión.');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
