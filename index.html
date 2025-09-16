@@ -14,13 +14,18 @@
     <form>
   <div class="mb-12">
     <label for="fechaInicioInput" class="form-label">Fecha de diligenciamiento del formulario</label>
-    <input type="date" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
+    <input type="date" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered disabled>
     <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
   </div>
   <div class="mb-12">
-    <label for="procesoInput" class="form-label">Porceso</label>
-    <input type="date" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
-    <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
+    <label for="procesoInput" class="form-label">*Porceso</label>
+    <select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+   
   </div>
 <div class="mb-12">
     <label for="servicioInput" class="form-label">Servicio/Subprocesos</label>
