@@ -17,7 +17,8 @@
     <form>
       <div class="mb-12">
         <label for="fechaInicioInput" class="form-label">Fecha de diligenciamiento del formulario</label>
-        <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" aria-describedby="fechaInicioHelp" requiered disabled>
+        <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" aria-describedby="fechaInicioHelp"
+          requiered disabled>
         <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
       </div>
       <div class="mb-12">
@@ -142,10 +143,15 @@
     <hr>
     <button type="submit">🚀 Enviar a n8n</button>
   </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <script>
-    $('document').ready(function(){
-      console.log( "ready!" );
+    $('document').ready(function () {
+      console.log("ready!");
     });
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('dynamicForm');
@@ -228,10 +234,6 @@
       });
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 </body>
 
