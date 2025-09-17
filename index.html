@@ -1,228 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Dinámico</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Dinámico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
+
 <body>
-<div class="container">
-  <!-- Content here -->
-     <h1>Generador de Reporte</h1>
+  <div class="container">
+    <!-- Content here -->
+    <h1>Generador de Reporte Novedades</h1>
     <form>
-  <div class="mb-12">
-    <label for="fechaInicioInput" class="form-label">Fecha de diligenciamiento del formulario</label>
-    <input type="date" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered disabled>
-    <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
-  </div>
-  <div class="mb-12">
-    <label for="procesoInput" class="form-label">*Porceso</label>
-    <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-   
-  </div>
-<div class="mb-12">
-    <label for="servicioInput" class="form-label">Servicio/Subprocesos</label>
-    <select class="form-select" aria-label="Default select example" id="fechaInicio">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-    
-  </div>
-        <div class="mb-12">
-    <label for="nombreInput" class="form-label">Nombres completos</label>
-    <input type="text" class="form-control" id="nombres" aria-describedby="nombresHelp" requiered>
-    <div id="nombresHelp" class="form-text">Campo automatico no se diligencia</div>
-  </div>
-<div class="mb-12">
-    <label for="apellidoInput" class="form-label">Apellidos</label>
-    <input type="text" class="form-control" id="apellido" aria-describedby="apellidoHelp" requiered>
-    <div id="apellidoHelp" class="form-text">Campo automatico no se diligencia</div>
-  </div>
-<div class="mb-12">
-    <label for="numDocumentoInput" class="form-label">Numero de documento</label>
-    <input type="number" class="form-control" id="numDocumento" aria-describedby="numDocumentoHelp" requiered>
-    <div id="numDocumentoHelp" class="form-text">Campo automatico no se diligencia</div>
-  </div>
-<div class="mb-12">
-    <label for="cargoInput" class="form-label">Cargo</label>
-    <input type="text" class="form-control" id="cargo" aria-describedby="cargoHelp" requiered>
-    <div id="cargoHelp" class="form-text">Campo automatico no se diligencia</div>
-  </div>
-<div class="mb-12">
-    <label for="servicioInput" class="form-label">Tipo de Vinculación</label>
-    <select class="form-select" aria-label="Default select example" id="xxx">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-  </div>
-<div class="mb-12">
-    <label for="servicioInput" class="form-label">Tipo de personal</label>
-    <select class="form-select" aria-label="Default select example" id="fechaInicio">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-  </div>
-<div class="mb-12">
-    <label for="servicioInput" class="form-label">tipo de novedad</label>
-    <select class="form-select" aria-label="Default select example" id="fechaInicio">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-  </div>
-<div class="mb-12">
-    <label for="servicioInput" class="form-label">Motivo de la novedad</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
-  </div>
-        
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">fecha de la novedad</label>
-   <input type="date" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
-  </div>
- <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">fecha de la novedad</label>
-   <input type="time" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
-  </div>
- <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">fecha de la novedad</label>
-   <input type="time" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
-  </div>
+      <div class="mb-12">
+        <label for="fechaInicioInput" class="form-label">Fecha de diligenciamiento del formulario</label>
+        <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" aria-describedby="fechaInicioHelp" requiered disabled>
+        <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
+      </div>
+      <div class="mb-12">
+        <label for="procesoInput" class="form-label">*Porceso</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
 
-<div class="mb-12">
-    <label for="servicioInput" class="form-label">6. REQUIERE REEMPLAZO</label>
-    <select class="form-select" aria-label="Default select example" id="fechaInicio">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-</select>
-  </div>
-<div class="mb-3">
-  <label for="formFile" class="form-label">Soportes</label>
-  <input class="form-control" type="file" id="formFile">
-</div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    
-</div>
-    <h1>Generador de Reporte</h1>
-    
-    <form id="dynamicForm">
-        <div class="row">
-            <label for="report-name">Nombre del Reporte:</label>
-            <input type="text" id="report-name" name="reportName" required>
-        </div>
+      </div>
+      <div class="mb-12">
+        <label for="servicioInput" class="form-label">Servicio/Subprocesos</label>
+        <select class="form-select" aria-label="Default select example" id="fechaInicio">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
 
-        <h2>Items:</h2>
-        <div id="item-container">
-            </div>
+      </div>
+      <div class="mb-12">
+        <label for="nombreInput" class="form-label">Nombres completos</label>
+        <input type="text" class="form-control" id="nombres" aria-describedby="nombresHelp" requiered>
+        <div id="nombresHelp" class="form-text">Campo automatico no se diligencia</div>
+      </div>
+      <div class="mb-12">
+        <label for="apellidoInput" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="apellido" aria-describedby="apellidoHelp" requiered>
+        <div id="apellidoHelp" class="form-text">Campo automatico no se diligencia</div>
+      </div>
+      <div class="mb-12">
+        <label for="numDocumentoInput" class="form-label">Numero de documento</label>
+        <input type="number" class="form-control" id="numDocumento" aria-describedby="numDocumentoHelp" requiered>
+        <div id="numDocumentoHelp" class="form-text">Campo automatico no se diligencia</div>
+      </div>
+      <div class="mb-12">
+        <label for="cargoInput" class="form-label">Cargo</label>
+        <input type="text" class="form-control" id="cargo" aria-describedby="cargoHelp" requiered>
+        <div id="cargoHelp" class="form-text">Campo automatico no se diligencia</div>
+      </div>
+      <div class="mb-12">
+        <label for="servicioInput" class="form-label">Tipo de Vinculación</label>
+        <select class="form-select" aria-label="Default select example" id="xxx">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="mb-12">
+        <label for="servicioInput" class="form-label">Tipo de personal</label>
+        <select class="form-select" aria-label="Default select example" id="fechaInicio">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="mb-12">
+        <label for="servicioInput" class="form-label">tipo de novedad</label>
+        <select class="form-select" aria-label="Default select example" id="fechaInicio">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="mb-12">
+        <label for="servicioInput" class="form-label">Motivo de la novedad</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div id="fechaInicioHelp" class="form-text">Campo automatico no se diligencia</div>
+      </div>
 
-        <button type="button" id="addItemBtn">➕ Agregar Ítem</button>
-        <hr>
-        <button type="submit">🚀 Enviar a n8n</button>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">fecha de la novedad</label>
+        <input type="date" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">fecha de la novedad</label>
+        <input type="time" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">fecha de la novedad</label>
+        <input type="time" class="form-control" id="fechaInicio" aria-describedby="fechaInicioHelp" requiered>
+      </div>
+
+      <div class="mb-12">
+        <label for="servicioInput" class="form-label">6. REQUIERE REEMPLAZO</label>
+        <select class="form-select" aria-label="Default select example" id="fechaInicio">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Soportes</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('dynamicForm');
-            const itemContainer = document.getElementById('item-container');
-            const addItemBtn = document.getElementById('addItemBtn');
-            const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
+  </div>
+  <h1>Generador de Reporte</h1>
 
-            let rowCount = 0;
+  <form id="dynamicForm">
+    <div class="row">
+      <label for="report-name">Nombre del Reporte:</label>
+      <input type="text" id="report-name" name="reportName" required>
+    </div>
 
-            // Función para crear y agregar una nueva fila
-            function createItemRow() {
-                rowCount++;
-                const newRow = document.createElement('div');
-                newRow.classList.add('item-row');
-                newRow.innerHTML = `
+    <h2>Items:</h2>
+    <div id="item-container">
+    </div>
+
+    <button type="button" id="addItemBtn">➕ Agregar Ítem</button>
+    <hr>
+    <button type="submit">🚀 Enviar a n8n</button>
+  </form>
+
+  <script>
+    $('document').ready(function(){
+      console.log( "ready!" );
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('dynamicForm');
+      const itemContainer = document.getElementById('item-container');
+      const addItemBtn = document.getElementById('addItemBtn');
+      const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
+
+      let rowCount = 0;
+
+      // Función para crear y agregar una nueva fila
+      function createItemRow() {
+        rowCount++;
+        const newRow = document.createElement('div');
+        newRow.classList.add('item-row');
+        newRow.innerHTML = `
                     <div class="row">
                         <input type="text" name="itemName-${rowCount}" placeholder="Nombre del Ítem" required>
                         <input type="number" name="quantity-${rowCount}" placeholder="Cantidad" required>
                         <button type="button" class="removeItemBtn">🗑️</button>
                     </div>
                 `;
-                itemContainer.appendChild(newRow);
+        itemContainer.appendChild(newRow);
 
-                // Agregar el evento al nuevo botón de eliminar
-                newRow.querySelector('.removeItemBtn').addEventListener('click', () => {
-                    itemContainer.removeChild(newRow);
-                });
-            }
-
-            // Agrega una fila inicial al cargar
-            createItemRow();
-
-            // Evento para el botón de agregar
-            addItemBtn.addEventListener('click', createItemRow);
-
-            // Evento para el envío del formulario
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault(); // Evita el envío tradicional del formulario
-
-                const formData = new FormData(form);
-                const dataToSend = {
-                    reportName: formData.get('reportName'),
-                    items: [] // Aquí se almacenarán las filas dinámicas como un array de objetos
-                };
-
-                // Recorre todas las filas de ítems y las añade al array
-                const itemRows = itemContainer.querySelectorAll('.item-row');
-                itemRows.forEach(row => {
-                    const itemName = row.querySelector('input[name^="itemName"]').value;
-                    const quantity = row.querySelector('input[name^="quantity"]').value;
-                    dataToSend.items.push({
-                        itemName,
-                        quantity: parseInt(quantity)
-                    });
-                });
-
-                console.log('Datos a enviar:', dataToSend);
-
-                try {
-                    const response = await fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(dataToSend)
-                    });
-
-                    if (response.ok) {
-                        alert('Datos enviados a n8n con éxito!');
-                        form.reset();
-                        itemContainer.innerHTML = ''; // Limpia las filas
-                        createItemRow(); // Agrega la primera fila nuevamente
-                    } else {
-                        alert('Error al enviar los datos a n8n.');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Error de conexión.');
-                }
-            });
+        // Agregar el evento al nuevo botón de eliminar
+        newRow.querySelector('.removeItemBtn').addEventListener('click', () => {
+          itemContainer.removeChild(newRow);
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      }
+
+      // Agrega una fila inicial al cargar
+      createItemRow();
+
+      // Evento para el botón de agregar
+      addItemBtn.addEventListener('click', createItemRow);
+
+      // Evento para el envío del formulario
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Evita el envío tradicional del formulario
+
+        const formData = new FormData(form);
+        const dataToSend = {
+          reportName: formData.get('reportName'),
+          items: [] // Aquí se almacenarán las filas dinámicas como un array de objetos
+        };
+
+        // Recorre todas las filas de ítems y las añade al array
+        const itemRows = itemContainer.querySelectorAll('.item-row');
+        itemRows.forEach(row => {
+          const itemName = row.querySelector('input[name^="itemName"]').value;
+          const quantity = row.querySelector('input[name^="quantity"]').value;
+          dataToSend.items.push({
+            itemName,
+            quantity: parseInt(quantity)
+          });
+        });
+
+        console.log('Datos a enviar:', dataToSend);
+
+        try {
+          const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataToSend)
+          });
+
+          if (response.ok) {
+            alert('Datos enviados a n8n con éxito!');
+            form.reset();
+            itemContainer.innerHTML = ''; // Limpia las filas
+            createItemRow(); // Agrega la primera fila nuevamente
+          } else {
+            alert('Error al enviar los datos a n8n.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error de conexión.');
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
