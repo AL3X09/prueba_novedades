@@ -115,16 +115,17 @@
           <option value="2">Two</option>
         </select>
       </div>
-      <div class="mb-3">
+      <div class="mb-12">
         <label for="formFile" class="form-label">Soportes</label>
         <input class="form-control" type="file" id="formFile">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      <div class="mb-12">
+      <button type="button" id="addItemBtn" class="btn btn-primary">➕Adicionar fechas</button>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+      <div class="mb-12">
+      <button type="button" id="addItemBtn" class="btn btn-primary">➕Adicionar fechas</button>
+      </div>
+        </form>
 
   </div>
   <h1>Generador de Reporte</h1>
@@ -139,7 +140,7 @@
     <div id="item-container">
     </div>
 
-    <button type="button" id="addItemBtn">➕ Agregar Ítem</button>
+    <button type="button" id="">➕ Agregar Ítem</button>
     <hr>
     <button type="submit">🚀 Enviar a n8n</button>
   </form>
@@ -151,12 +152,49 @@
 
   <script>
     $('document').ready(function () {
-      console.log("ready!");
+
+      //console.log("ready!");
+      var d = new Date();
+
+      var month = d.getMonth() + 1;
+      var day = d.getDate();
+
+      var output = d.getFullYear() + '/' +
+        (month < 10 ? '0' : '') + month + '/' +
+        (day < 10 ? '0' : '') + day;
+      //
+      $('#fechaInicio').val(output);
+
+      $('addItemBtn').click(function () {
+        alert('click');
+      });
+
+      $.ajax({
+        type: "POST",
+        url: someurl,
+        contentType: "text/xml",
+        data: somedata,
+        username: user,
+        password: pass,
+        success: function (data, status, xhr) {
+          alert("Hurrah!");
+        },
+        error: function (xhr, status, error) {
+          alert("Error!" + xhr.status);
+        },
+        complete: function () {
+          if (!weHaveSuccess) {
+            alert('Your username/password seems to be incorrect!');
+          }
+        },
+        //dataType: "xml"
+      });
     });
+
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('dynamicForm');
       const itemContainer = document.getElementById('item-container');
-      const addItemBtn = document.getElementById('addItemBtn');
+      const addItemBtn = 0;//document.getElementById('addItemBtn');
       const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
 
       let rowCount = 0;
