@@ -123,8 +123,7 @@
         <button type="button" id="addItemBtn" class="btn btn-primary">➕Adicionar fechas</button>
       </div>
       <div class="mb-12">
-        <button type="submit">🚀 Enviar a n8n</button>
-
+        <button type="button" onclick="enviaran8n()">🚀 Enviar a n8n</button>
       </div>
     </form>
 
@@ -154,9 +153,6 @@
   <script>
     $('document').ready(function () {
 
-      const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
-
-
       //console.log("ready!");
       var d = new Date();
 
@@ -169,11 +165,19 @@
       //
       $('#fechaInicio').val(output);
 
-      $('addItemBtn').click(function () {
-        alert('click');
-      });
+      //$('addItemBtn').click(function () {
+        //alert('click');
+      //});
+
+    });
+
+    async function enviaran8n() {
+
+      const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
+
 
       let form = $('#formNovedaes').serialize();
+
 
       $.ajax({
         url: webhookUrl,
@@ -191,8 +195,8 @@
           alert('Error al enviar los datos a n8n.');
         }
       });
-
-    });
+      
+    }
 
     </script>
 
