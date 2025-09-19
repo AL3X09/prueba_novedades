@@ -179,7 +179,7 @@
       const form = $('#formNovedades').serialize();
       //$('#form-guardar-proceso').serialize()
       console.log('form');
-      console.log(form);
+      console.log($('#formNovedades').serialize());
 
       $.ajax({
         url: webhookUrl,
@@ -199,7 +199,6 @@
       });
       
     }
-
     </script>
 
 </body>
