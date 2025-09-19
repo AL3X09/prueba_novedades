@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario Dinámico</title>
+  <title>Reporte Novedades</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -14,7 +14,7 @@
   <div class="container">
     <!-- Content here -->
     <h1>Generador de Reporte Novedades</h1>
-    <form>
+    <form id="formNovedades">
       <div class="mb-12">
         <label for="fechaInicioInput" class="form-label">Fecha de diligenciamiento del formulario</label>
         <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" aria-describedby="fechaInicioHelp"
@@ -154,6 +154,9 @@
   <script>
     $('document').ready(function () {
 
+      const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
+
+
       //console.log("ready!");
       var d = new Date();
 
@@ -170,33 +173,32 @@
         alert('click');
       });
 
+      let form = $('#formNovedaes').serialize();
+
       $.ajax({
-        type: "POST",
-        url: someurl,
-        contentType: "text/xml",
-        data: somedata,
-        username: user,
-        password: pass,
-        success: function (data, status, xhr) {
-          alert("Hurrah!");
+        url: webhookUrl,
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(dataToSend),
+        success: function (response) {
+          alert('Datos enviados a n8n con éxito!');
+          form.reset();
+          itemContainer.innerHTML = ''; // Limpia las filas
+          createItemRow(); // Agrega la primera fila nuevamente
         },
         error: function (xhr, status, error) {
-          alert("Error!" + xhr.status);
-        },
-        complete: function () {
-          if (!weHaveSuccess) {
-            alert('Your username/password seems to be incorrect!');
-          }
-        },
-        //dataType: "xml"
+          console.error('Error:', error);
+          alert('Error al enviar los datos a n8n.');
+        }
       });
+
     });
 
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('dynamicForm');
       const itemContainer = document.getElementById('item-container');
       const addItemBtn = 0;//document.getElementById('addItemBtn');
-      const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
+      //const webhookUrl = 'https://pruebanochon-fdhfbpaehvhmgdbx.chilecentral-01.azurewebsites.net/webhook-test/a5d568d4-e3d7-4af7-a00e-4a7198263d6f'; // ¡IMPORTANTE! Reemplaza esto con tu URL de Webhook de n8n.
 
       let rowCount = 0;
 
