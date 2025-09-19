@@ -179,7 +179,7 @@
         url: webhookUrl,
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify(dataToSend),
+        data: JSON.stringify(form),
         success: function (response) {
           alert('Datos enviados a n8n con éxito!');
           form.reset();
