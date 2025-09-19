@@ -23,7 +23,7 @@
       </div>
       <div class="mb-12">
         <label for="procesoInput" class="form-label">*Porceso</label>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" name="procesoInput[]" id="procesoInput">
           <option selected>Open this select menu</option>
           <option value="1">One</option>
           <option value="2">Two</option>
@@ -178,8 +178,8 @@
 
       const form = $('#formNovedades').serialize();
       //$('#form-guardar-proceso').serialize()
-      console.log('form');
-      console.info($('#formNovedades'));
+      console.log(form);
+      //console.info($('#formNovedades'));
 
       $.ajax({
         url: webhookUrl,
